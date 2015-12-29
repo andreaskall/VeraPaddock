@@ -15,10 +15,14 @@ def animate(i):
 	xs = []
 	ys = []
 	for line in lines:
+		if len(xs) >50:
+			xs = xs[1:]
+			ys = ys[1:]
 		if len(line)>1:
 			data = line.split(',')
 			xs.append(data[0])
-			ys.append(data[1])
+			ys.append(data[3])
+
 
 	ax1.clear()
 	ax1.plot(xs, ys)

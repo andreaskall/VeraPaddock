@@ -14,11 +14,25 @@ def parseData(dataString):
 
 
 while True:
-	data = port.readline()
+	try:
+		data = port.readline()
+	except:
+		data = None
+		try:
+			port.close()
+		except:
+			pass
+		try:
+			port = serial.Serial('/dev/tty.usbserial-FTB3M4C2', 9600)
+		except:
+			pass
 	print(data),
-	mode,data = parseData(data)
-	if mode == "BASE":
-		data = ",".join(data)
-  		with open('data.txt','a') as txtFile:
-  			txtFile.write(str(numberOfData)+',' + str(data) + "\n")
-    		numberOfData += 1
+	if data != None:
+		mode,data = parseData(data)
+		if mode == "BASE":
+			data = ",".join(data)
+  			with open('data.txt','a') as txtFile:
+  				txtFile.write(str(numberOfData)+',' + str(data) + "\n")
+    			numberOfData += 1
+   	else:
+   		time.sleep(1)

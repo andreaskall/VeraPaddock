@@ -12,10 +12,19 @@ from matplotlib import style
 
 
 #adjust these values based on your location and map, lat and long are in decimal degrees
+
+## Landala map
 TRX = 11.978420         #top right longitude
 TRY = 57.696324         #top right latitude
 BLX = 11.965645         #bottom left longitude
 BLY = 57.690052         #bottom left latitude
+
+#London map
+#TRX = 11.978420         #top right longitude
+#TRY = 57.696324         #top right latitude
+#BLX = 11.965645         #bottom left longitude
+#BLY = 57.690052         #bottom left latitude
+
 lat_input = 0           #latitude of home marker
 long_input = 0          #longitude of home marker
 

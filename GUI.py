@@ -19,7 +19,7 @@ BLY = 57.690052         #bottom left latitude
 lat_input = 0           #latitude of home marker
 long_input = 0          #longitude of home marker
 
-mapImage = plt.imread('map.png')
+mapImage = plt.imread('Landala.png')
 
 
 plt.rcParams['toolbar'] = 'None'
